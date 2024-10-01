@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Bottom Navigation View -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+
+    <!-- FrameLayout for Static Upper Content -->
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!-- Main Frame for UV Index and Status -->
+        <TextView
+            android:id="@+id/uvIndexStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:text="UV Index  : "
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </FrameLayout>
+
+    <!-- FrameLayout for Fragments -->
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/orange"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <ImageView
+            android:id="@+id/sunscreen"
+            android:layout_width="77dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/sunscreen" />
+
+        <TextView
+            android:id="@+id/sunscreenText"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="170dp"
+            android:fontFamily="@font/poppins"
+            android:text="Check UV advice!"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+
+
+        <ImageView
+            android:id="@+id/ellipseView"
+            android:layout_width="77dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ellipse_shape" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppins"
+            android:text="30°C"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="120dp"
+            android:textSize="20sp"
+            android:text="Bandung"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white" />
+
+
+        <com.ekn.gruzer.gaugelibrary.ArcGauge
+            android:id="@+id/uvIndexGauge"
+            android:layout_width="300dp"
+            android:layout_height="310dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="110dp"
+            android:textSize="20sp"
+            android:text="10:00"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+    <!-- FrameLayout for Static Bottom Content -->
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="0dp"
+        android:layout_height="135dp"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout4">
+
+
+        <TextView
+            android:id="@+id/MaxUVIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/max_uv_index"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <!-- UV Blocks for Times - Using GridLayout for better control -->
+
+        <GridLayout
+            android:id="@+id/uvTimeBlocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:layout_below="@id/UVForecast"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="25dp"
+            android:columnCount="3"
+            android:rowCount="1">
+
+            <!-- Repeated Blocks for each UV time slot -->
+            <!-- This will need to be defined in a separate layout file named uv_block.xml -->
+            <include layout="@layout/uv_block" />
+            <include layout="@layout/uv_block" />
+            <include layout="@layout/uv_block" />
+
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/pressure"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/altitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/altitude"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="33dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/heart" />
+
+        <ImageView
+            android:id="@+id/windSpeed"
+            android:layout_width="33dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@drawable/wind"
+            />
+        <TextView
+            android:id="@+id/windspeedValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppins"
+            android:text="0.0"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/UVForecast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/UV_Forecast"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Protection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/Protection"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/ProtectionTimeStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/poppins"
+            android:text="08:57 - 15:12"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+        <ImageView
+            android:id="@+id/MaxUVIndexStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/ellipse_shape" />
+
+        <TextView
+            android:id="@+id/MaxUVIndexValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppins"
+            android:text="0.0"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

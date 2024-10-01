@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#4949BC"
+        android:fontFamily="@font/poppins"
+        android:text="20:00"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvUVIndex"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/poppins"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="UV Index"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF" />
+</FrameLayout>

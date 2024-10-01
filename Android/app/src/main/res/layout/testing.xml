@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000080"
+    android:padding="16dp">
+
+    <!-- Title UV Forecast -->
+    <TextView
+        android:id="@+id/tvUVForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UV Forecast"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- UV Blocks for Times - Using GridLayout for better control -->
+    <GridLayout
+        android:id="@+id/uvTimeBlocks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="1"
+        android:columnCount="6"
+        android:layout_below="@id/tvUVForecast"
+        android:layout_marginTop="8dp">
+
+        <!-- Repeated Blocks for each UV time slot -->
+        <!-- This will need to be defined in a separate layout file named uv_block.xml -->
+        <include layout="@layout/uv_block" />
+        <include layout="@layout/uv_block" />
+        <include layout="@layout/uv_block" />
+        <include layout="@layout/uv_block" />
+        <include layout="@layout/uv_block" />
+        <include layout="@layout/uv_block" />
+    </GridLayout>
+
+    <!-- Info panel for Ozone, Vitamin D, Max UV -->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayoutInfo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_below="@id/uvTimeBlocks"-->
+<!--        android:layout_marginTop="8dp">-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Ozone\nLow: 260du"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="#FFFFFF"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="center" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Vitamin D\n-"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="#FFFFFF"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="center" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Max UV\n10.2"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="#FFFFFF"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:gravity="center" />&ndash;&gt;-->
+<!--    </LinearLayout>-->
+
+<!--    &lt;!&ndash; Protection and Burn Time &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvProtection"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Protection\n08:57 - 15:12"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:layout_below="@id/linearLayoutInfo"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="16dp" />-->
+
+<!--    &lt;!&ndash; Time till burn &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/tvBurnTime"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Till Burn"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:layout_below="@id/tvProtection"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="8dp" />-->
+</RelativeLayout>

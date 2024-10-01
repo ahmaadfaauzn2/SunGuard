@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Display the DateTime of the prediction -->
+    <TextView
+        android:id="@+id/predictionDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tanggal_dan_jam"
+        android:textSize="16sp"
+        android:fontFamily="@font/robotolight"
+        android:textColor="#000000" />
+
+    <!-- Display the Predicted Value of the UV index -->
+    <TextView
+        android:id="@+id/predictedUVIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prediksi_nilai_uv_index"
+        android:textSize="16sp"
+        android:fontFamily="@font/robotolight"
+        android:textColor="#000000" />
+
+    <!-- Optionally add a TextView for the confidence level or additional notes -->
+<!--    <TextView-->
+<!--        android:id="@+id/confidenceLevel"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Confidence Level: "-->
+<!--        android:textSize="14sp"-->
+<!--        android:textColor="#757575" />-->
+
+</LinearLayout>

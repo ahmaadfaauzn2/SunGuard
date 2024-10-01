@@ -1,0 +1,41 @@
+<resources>
+    <!-- App name -->
+    <string name="app_name">ble example</string>
+    <string name="ble_not_supported">BLE is not supported</string>
+    <string name="label_data">Data:</string>
+    <string name="label_device_address">Device address:</string>
+    <string name="label_state">State:</string>
+    <string name="no_data">No data</string>
+    <string name="connected">Connected</string>
+
+    <!-- Device scan -->
+    <string name="disconnected">Disconnected</string>
+    <string name="title_devices">BLE Device Scan</string>
+    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
+    <string name="unknown_device">Unknown device</string>
+    <string name="unknown_characteristic">Unknown characteristic</string>
+    <string name="unknown_service">Unknown service</string>
+
+
+    <!-- Menu items -->
+    <string name="menu_connect">Connect</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="menu_scan">Scan</string>
+    <string name="menu_stop">Stop</string>
+    <string name="device_connected">CONNECTED</string>
+    <string name="device_disconnected">DISCONNECTED</string>
+    <string name="ble_device_key">askljdgjKLSDGJlKJSgdlkd</string>
+    <string name="agm_key">KLAFDJGkljasdglJASFLDFKSJFLKASDJGK</string>
+    <string name="altitude">Altitude :</string>
+    <string name="pressure">Pressure :</string>
+
+    <string name="max_uv_index">MAX UV</string>
+    <string name="UV_Forecast">UV Forecast</string>
+    <string name="Protection">Protection</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_uv_index_data_fragment">Hello uv index fragment</string>
+    <string name="hello_uv_index_prediction">Hello uv index prediction</string>
+    <string name="tanggal_dan_jam">Tanggal dan Jam :</string>
+    <string name="prediksi_nilai_uv_index">Prediksi nilai UV Index :</string>
+
+</resources>

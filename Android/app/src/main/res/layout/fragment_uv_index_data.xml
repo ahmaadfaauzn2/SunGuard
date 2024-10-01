@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.UVIndexDataFragment">
+
+    <!-- FrameLayout for Static Bottom Content -->
+    <FrameLayout
+        android:id="@+id/frameLayout5"
+        android:layout_width="423dp"
+        android:layout_height="728dp"
+        android:background="@drawable/orange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+<!--        <TextView-->
+<!--            android:id="@+id/UVListData"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="135dp"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            android:fontFamily="@font/poppins"-->
+<!--            android:textSize="40dp"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:text="List Data" />-->
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/UVIndexDataRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

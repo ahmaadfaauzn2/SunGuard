@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="uvBlock1" type="id" />
+    <item name="uvTimeBlocks" type="id" />
+    <item name="uvBlock2" type="id" />
+    <item name="uvBlock3" type="id" />
+    <item name="uvBlock4" type="id" />
+    <item name="uvBlock5" type="id" />
+    <item name="uvBlock6" type="id" />
+</resources>

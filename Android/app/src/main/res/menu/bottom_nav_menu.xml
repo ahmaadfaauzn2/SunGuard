@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
+        <item
+            android:id="@+id/nav_uv_index_data"
+            android:title="UV Index Data"
+            android:icon="@drawable/database"/>
+        <item
+            android:id="@+id/nav_uv_prediction"
+            android:title="UV Prediction"
+            android:icon="@drawable/uvpredict"/>
+    </menu>
