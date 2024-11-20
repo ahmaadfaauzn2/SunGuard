@@ -26,6 +26,101 @@ A high-level overview of the architecture of the system, illustrating the intera
 The block diagram represents the structure of the system, detailing how components and data flow through it.
 ![block diagramm](https://github.com/user-attachments/assets/31dd6d46-34dd-4082-a2ab-945a6ac66698)
 
+# Key Code Snippets 
+
+ESP32 Firmware (C++)
+```
+#include <Arduino.h>
+
+#define UV_SENSOR_PIN 34
+
+void setup() {
+    Serial.begin(115200);
+    pinMode(UV_SENSOR_PIN, INPUT);
+}
+
+void loop() {
+    int uvValue = analogRead(UV_SENSOR_PIN);
+    float uvIndex = uvValue * 0.1;  // Conversion factor
+    Serial.println("UV Index: " + String(uvIndex));
+    delay(2000);  // Update every 2 seconds
+}
+```
+
+# Flask Backend (Python)
+
+```
+from flask import Flask, request, jsonify
+import numpy as np
+from model.predict import predict_uv_risk
+
+app = Flask(__name__)
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    uv_index = data.get('uv_index')
+    if uv_index is None:
+        return jsonify({'error': 'UV index is required'}), 400
+    risk = predict_uv_risk(float(uv_index))
+    return jsonify({'uv_index': uv_index, 'sunscreen_spf': risk})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+# Android App BLE Integration (Java)
+
+```
+BluetoothGattCallback gattCallback = new BluetoothGattCallback() {
+    @Override
+    public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
+        String uvIndex = characteristic.getStringValue(0);
+        runOnUiThread(() -> updateUI(uvIndex));
+    }
+};
+
+private void updateUI(String uvIndex) {
+    TextView uvIndexView = findViewById(R.id.uvIndexText);
+    uvIndexView.setText("UV Index: " + uvIndex);
+}
+```
+
+## Installation and Setup
+
+# Step 1: Clone the Repository
+
+```
+git clone https://github.com/ahmaadfaauzn2/wearable-project.git
+cd wearable-project
+```
+
+# Step 2: Set Up the ESP32 Firmware
+1. Install Arduino IDE.
+2. Open ESP/src/main.cpp.
+3. Upload the code to the ESP32.
+
+# Step 3: Run the Flask API
+1. Install dependencies:
+   
+```
+pip install -r requirements.txt
+```
+
+2. Run the Flask app:
+
+```
+python.py
+```
+
+# Step 4: Install the Android App
+
+Build the app using Android Studio.
+Connect your Android device and deploy the APK.
+
+
+
+
 # Wiring Diagram
 The wiring diagram shows how the components are connected. This is useful for replicating the physical setup of the project.
 ![image](https://github.com/user-attachments/assets/f7485f31-e9d3-42c4-8840-3e29fa8811c0)
