@@ -13,6 +13,14 @@
 A high-level overview of the architecture of the system, illustrating the interactions between different components.
 ![architektur](https://github.com/user-attachments/assets/7f687096-7012-4b4b-a8d5-ee02f042fb18)
 
+# System Architecture
+
+## High-Level Overview:
+
+```
+[ESP32 with GUVA Sensor] --(BLE)--> [Android App] --(REST API)--> [AI Model] --> [SunGuard Device Sunscreen recommendation}
+```
+
 
 # Block Diagram
 The block diagram represents the structure of the system, detailing how components and data flow through it.
